@@ -6,6 +6,7 @@
     <title><?php echo $title ?? 'Payroll Management System'; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/public/css/formula-editor.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -69,6 +70,11 @@
                         <a href="/loans" class="nav-link <?php echo str_contains($_SERVER['REQUEST_URI'], '/loans') ? 'border-primary-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'; ?> inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-hand-holding-usd mr-2"></i>
                             Loans
+                        </a>
+                        
+                        <a href="/formula-editor" class="nav-link <?php echo str_contains($_SERVER['REQUEST_URI'], '/formula-editor') ? 'border-primary-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'; ?> inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            <i class="fas fa-code mr-2"></i>
+                            Formulas
                         </a>
                         <?php endif; ?>
                         

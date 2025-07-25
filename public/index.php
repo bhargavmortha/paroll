@@ -167,6 +167,19 @@ $router->addRoute('POST', '/users/create', 'User', 'create');
 $router->addRoute('GET', '/users/{id}/edit', 'User', 'edit');
 $router->addRoute('POST', '/users/{id}/edit', 'User', 'edit');
 
+// Formula Editor routes
+$router->addRoute('GET', '/formula-editor', 'FormulaEditor', 'index');
+$router->addRoute('GET', '/formula-editor/builder', 'FormulaEditor', 'builder');
+$router->addRoute('POST', '/formula-editor/validate', 'FormulaEditor', 'validateFormula');
+$router->addRoute('POST', '/formula-editor/test', 'FormulaEditor', 'testFormula');
+$router->addRoute('POST', '/formula-editor/save', 'FormulaEditor', 'saveFormula');
+$router->addRoute('GET', '/formula-editor/templates', 'FormulaEditor', 'getFormulaTemplates');
+$router->addRoute('GET', '/formula-editor/export', 'FormulaEditor', 'exportFormula');
+$router->addRoute('GET', '/formula-editor/custom-query', 'FormulaEditor', 'customQuery');
+$router->addRoute('POST', '/formula-editor/custom-query', 'FormulaEditor', 'customQuery');
+$router->addRoute('POST', '/formula-editor/save-query', 'FormulaEditor', 'saveQuery');
+$router->addRoute('GET', '/formula-editor/query-history', 'FormulaEditor', 'getQueryHistory');
+
 // API routes for AJAX calls
 $router->addRoute('GET', '/api/attendance-summary', 'Api', 'attendanceSummary');
 $router->addRoute('GET', '/api/current-period', 'Api', 'currentPeriod');
