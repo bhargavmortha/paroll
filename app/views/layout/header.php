@@ -56,11 +56,6 @@
                             Payroll
                         </a>
                         
-                        <a href="/payroll/arrears" class="nav-link <?php echo str_contains($_SERVER['REQUEST_URI'], '/arrears') ? 'border-primary-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'; ?> inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            <i class="fas fa-plus-circle mr-2"></i>
-                            Arrears
-                        </a>
-                        
                         <a href="/reports" class="nav-link <?php echo str_contains($_SERVER['REQUEST_URI'], '/reports') ? 'border-primary-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'; ?> inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-chart-bar mr-2"></i>
                             Reports
@@ -156,6 +151,13 @@
         function toggleDropdown(id) {
             const dropdown = document.getElementById(id);
             dropdown.classList.toggle('hidden');
+            
+            // Close other dropdowns
+            document.querySelectorAll('[id$="-dropdown"]').forEach(otherDropdown => {
+                if (otherDropdown.id !== id) {
+                    otherDropdown.classList.add('hidden');
+                }
+            });
         }
         
         // Close dropdowns when clicking outside
@@ -166,7 +168,11 @@
                     dropdown.classList.add('hidden');
                 }
             });
+            
+            // Close user menu when clicking outside
+            const userMenu = document.getElementById('user-menu');
+            if (userMenu && !userMenu.closest('.relative').contains(event.target)) {
+                userMenu.classList.add('hidden');
+            }
         });
     </script>
-</body>
-</html>

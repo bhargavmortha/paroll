@@ -128,6 +128,8 @@ $router->addRoute('GET', '/leave-types', 'LeaveType', 'index');
 $router->addRoute('POST', '/leave-types', 'LeaveType', 'index');
 $router->addRoute('GET', '/holidays', 'Holiday', 'index');
 $router->addRoute('POST', '/holidays', 'Holiday', 'index');
+$router->addRoute('GET', '/tax-slabs', 'TaxSlab', 'index');
+$router->addRoute('POST', '/tax-slabs', 'TaxSlab', 'index');
 
 // Report routes
 $router->addRoute('GET', '/reports', 'Report', 'index');
@@ -137,7 +139,10 @@ $router->addRoute('GET', '/reports/component-report', 'Report', 'componentReport
 $router->addRoute('POST', '/reports/component-report', 'Report', 'componentReport');
 $router->addRoute('GET', '/reports/bank-transfer', 'Report', 'bankTransfer');
 $router->addRoute('POST', '/reports/bank-transfer', 'Report', 'bankTransfer');
-$router->addRoute('GET', '/reports/payslip', 'Report', 'payslip');
+$router->addRoute('GET', '/reports/tax-report', 'Report', 'taxReport');
+$router->addRoute('POST', '/reports/tax-report', 'Report', 'taxReport');
+$router->addRoute('GET', '/reports/loan-report', 'Report', 'loanReport');
+$router->addRoute('POST', '/reports/loan-report', 'Report', 'loanReport');
 
 // Attendance routes
 $router->addRoute('GET', '/attendance', 'Attendance', 'index');
@@ -163,9 +168,6 @@ $router->addRoute('GET', '/users/{id}/edit', 'User', 'edit');
 $router->addRoute('POST', '/users/{id}/edit', 'User', 'edit');
 
 // API routes for AJAX calls
-$router->addRoute('GET', '/api/dashboard-widgets', 'Dashboard', 'getWidgetData');
-$router->addRoute('GET', '/api/attendance-summary', 'Attendance', 'getSummary');
-$router->addRoute('GET', '/api/current-period', 'Payroll', 'getCurrentPeriod');
 $router->addRoute('GET', '/api/attendance-summary', 'Api', 'attendanceSummary');
 $router->addRoute('GET', '/api/current-period', 'Api', 'currentPeriod');
 $router->addRoute('GET', '/api/employee-search', 'Api', 'employeeSearch');
